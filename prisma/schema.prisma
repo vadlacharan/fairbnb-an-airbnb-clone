@@ -76,6 +76,7 @@ model Listing {
   @@index([locationValue])
 }
 
+
 model Booking {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   createdAt   DateTime @default(now())
@@ -94,7 +95,7 @@ model Booking {
   guest       User     @relation(fields: [guestId], references: [id])
   
   // Booking details
-  totalPrice  Float
+
   guestCount  Int
   status      String   // pending, confirmed, cancelled, completed
   

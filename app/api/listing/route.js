@@ -75,6 +75,8 @@ export async function GET(req, res) {
       skip: parseInt(start),
       take:10
     });
+
+    
     return NextResponse.json({ listings: listings });
   } catch (err) {
     return NextResponse.json({ error: "error while fetching" });
